@@ -29,18 +29,37 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+console.log(`${new Date().toISOString()} [gax/grpc require] start`);
 
 import * as grpcProtoLoader from '@grpc/proto-loader';
+console.log(`${new Date().toISOString()} [gax/grpc require] proto loader`);
+
 import * as fs from 'fs';
+console.log(`${new Date().toISOString()} [gax/grpc require] fs`);
+
 import {GoogleAuth, GoogleAuthOptions} from 'google-auth-library';
+console.log(`${new Date().toISOString()} [gax/grpc require] google auth`);
+
 import * as grpc from '@grpc/grpc-js';
+console.log(`${new Date().toISOString()} [gax/grpc require] grpc-js`);
+
 import {OutgoingHttpHeaders} from 'http';
+console.log(`${new Date().toISOString()} [gax/grpc require] http`);
+
 import * as path from 'path';
+console.log(`${new Date().toISOString()} [gax/grpc require] path`);
+
 import * as protobuf from 'protobufjs';
+console.log(`${new Date().toISOString()} [gax/grpc require] protobuf`);
+
 import * as semver from 'semver';
+console.log(`${new Date().toISOString()} [gax/grpc require] semver`);
+
 import * as walk from 'walkdir';
+console.log(`${new Date().toISOString()} [gax/grpc require] walkdir`);
 
 import * as gax from './gax';
+console.log(`${new Date().toISOString()} [gax/grpc require] gax`);
 
 const googleProtoFilesDir = path.join(__dirname, '..', '..', 'protos');
 
@@ -364,3 +383,5 @@ export class GoogleProtoFilesRoot extends protobuf.Root {
     return path.join(current, includePath);
   }
 }
+
+console.log(`${new Date().toISOString()} [gax/grpc require] end`);
