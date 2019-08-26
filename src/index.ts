@@ -29,19 +29,34 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+console.log(`${new Date().toISOString()} [gax require] start`);
+
 import {GrpcClient, GrpcClientOptions} from './grpc';
+console.log(`${new Date().toISOString()} [gax require] after grpc`);
+
 import * as operationsClient from './operationsClient';
+console.log(`${new Date().toISOString()} [gax require] after operations client`);
+
 import * as routingHeader from './routingHeader';
+console.log(`${new Date().toISOString()} [gax require] after routing header`);
 
 export {GoogleAuth, GoogleAuthOptions} from 'google-auth-library';
+console.log(`${new Date().toISOString()} [gax require] after google-auth`);
+
 export {CancellablePromise, OngoingCall} from './call';
+console.log(`${new Date().toISOString()} [gax require] after call`);
+
 export {createApiCall} from './createApiCall';
+console.log(`${new Date().toISOString()} [gax require] create api call`);
+
 export {
   BundleDescriptor,
   LongrunningDescriptor,
   PageDescriptor,
   StreamDescriptor,
 } from './descriptor';
+console.log(`${new Date().toISOString()} [gax require] create descriptor`);
+
 export {
   CallOptions,
   CallSettings,
@@ -49,7 +64,11 @@ export {
   constructSettings,
   RetryOptions,
 } from './gax';
+console.log(`${new Date().toISOString()} [gax require] after gax`);
+
 export {GoogleError} from './googleError';
+console.log(`${new Date().toISOString()} [gax require] after google error`);
+
 export {
   ClientStub,
   ClientStubOptions,
@@ -60,9 +79,17 @@ export {
   Metadata,
   MetadataValue,
 } from './grpc';
+console.log(`${new Date().toISOString()} [gax require] after grpc 2`);
+
 export {Operation, operation} from './longRunningCalls/longrunning';
+console.log(`${new Date().toISOString()} [gax require] after longrunning`);
+
 export {PathTemplate} from './pathTemplate';
+console.log(`${new Date().toISOString()} [gax require] after path template`);
+
 export {StreamType} from './streamingCalls/streaming';
+console.log(`${new Date().toISOString()} [gax require] after streaming`);
+
 export {routingHeader};
 
 function lro(options: GrpcClientOptions) {
@@ -81,5 +108,9 @@ export const version = require('../../package.json').version;
 import * as protobuf from 'protobufjs';
 export {protobuf};
 
+console.log(`${new Date().toISOString()} [gax require] after protobuf`);
+
 import * as fallback from './browser';
+console.log(`${new Date().toISOString()} [gax require] after fallback`);
+
 export {fallback};
